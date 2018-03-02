@@ -25,20 +25,18 @@
 #>
 
 param(
- [Parameter(Mandatory=$false)]
+ 
  [string]
  $subscriptionId="bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf",
 
- [Parameter(Mandatory=$false)]
  [string]
  $resourceGroupName="toystore",
 
  [string]
  $resourceGroupLocation,
 
- [Parameter(Mandatory=$false)]
  [string]
- $deploymentName="toyfactory",
+ $deploymentName="toyfactory-cosmosdb",
 
  [string]
  $templateFilePath = "template.json",

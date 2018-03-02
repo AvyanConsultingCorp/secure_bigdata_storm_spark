@@ -8,7 +8,7 @@
         "location": {
             "type": "string"
         },
-        "locationname": {
+        "locationName": {
             "type": "string"
         },
         "defaultExperience": {
@@ -17,7 +17,7 @@
         "pairedLocation": {
             "type": "string"
         },
-        "pairedLocationname": {
+        "pairedLocationName": {
             "type": "string"
         }
     },
@@ -34,7 +34,7 @@
                     {
                         "id": "[concat(parameters('name'), '-', parameters('location'))]",
                         "failoverPriority": 0,
-                        "locationname": "[parameters('locationname')]"
+                        "locationName": "[parameters('locationName')]"
                     }
                 ]
             },
