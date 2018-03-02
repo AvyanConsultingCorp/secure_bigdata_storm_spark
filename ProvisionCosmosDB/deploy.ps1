@@ -38,7 +38,7 @@ param(
 
  [Parameter(Mandatory=$false)]
  [string]
- $deploymentName="toyfactory-cosmosdb",
+ $deploymentName="toyfactory",
 
  [string]
  $templateFilePath = "template.json",
