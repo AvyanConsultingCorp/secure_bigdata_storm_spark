@@ -1,11 +1,20 @@
-scp ./target/EventHubExample-1.0-SNAPSHOT.jar sshuser@storm-toyfactory-ssh.azurehdinsight.net:EventHubExample-1.0-SNAPSHOT.jar
-scp dev.properties sshuser@storm-toyfactory-ssh.azurehdinsight.net:dev.properties
+
+Step 9: Copy dev.properties to the storm cluster
+scp ./Storm-topology/dev.properties sshuser@storm-toyfactory-ssh.azurehdinsight.net:dev.properties
+
+Step 10: copy EventHubExample-1.0-SNAPSHOT.jar to storm cluster
+scp ./Storm-topology/target/EventHubExample-1.0-SNAPSHOT.jar sshuser@storm-toyfactory-ssh.azurehdinsight.net:EventHubExample-1.0-SNAPSHOT.jar
+
+Step 11: Start the storm topology
+-- ssh to the storm cluster
 ssh sshuser@storm-toyfactory-ssh.azurehdinsight.net
 
 -- deploy to local storm cluster
+-- This will push dummy data from devicehubspout to the event hub
 storm jar EventHubExample-1.0-SNAPSHOT.jar org.apache.storm.flux.Flux --local -R /writer.yaml --filter dev.properties
-storm jar EventHubExample-1.0-SNAPSHOT.jar org.apache.storm.flux.Flux --local -R /reader.yaml --filter dev.properties
+-- this will push data from event hub to power bi
 storm jar EventHubExample-1.0-SNAPSHOT.jar org.apache.storm.flux.Flux --local -R /readtopowerbi.yaml --filter dev.properties
+-- this will push data from event hub to cosmosdb
 storm jar EventHubExample-1.0-SNAPSHOT.jar org.apache.storm.flux.Flux --local -R /writetocosmosbd.yaml --filter dev.properties
 
 

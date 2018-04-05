@@ -13,19 +13,22 @@
 	- partitions 
 6. Create Power BI Live dashboard and get following details (Not Yet Automated)
 	- Power BI push URL 
-7.1 Provision Storm Cluster (Use: ProvisionStormCluster-ScriptActions)
+7.1 Provision Storm Cluster (Use: ProvisionStormCluster-WithStorage)
 7.2 Provision Spark cluster (Use: ProvisionSparkCluster)
+	- Replace subscriptionid in template.json "storageProfile" section 
 7.3 Upload Spark-To-CosmosDB\azure-cosmosdb-spark_2.1.0_2.11-0.0.4 jars to \example\jars on spark cluster default storage
 8. In Storm-topology folder, provide all of the above values in dev.properties file.
-9. Copy dev.properties to the storm cluster
-10. Copy \target\EventHubExample-1.0-SNAPSHOT.jar to storm cluster
-11. Copy dev.properties to storm cluster
-12. start the storm topologies on storm cluster
-13. Open spark cluster jupyter notebook dashboard and upload toystore-scala.ipynb.
+9. Copy Storm-topology\dev.properties to the storm cluster
+10. Copy Storm-topology\target\EventHubExample-1.0-SNAPSHOT.jar to storm cluster
+11. start the storm topologies on storm cluster
+	- Use Execution.txt for steps 9,10 & 11
+12. Open spark cluster jupyter notebook dashboard and upload toystore-scala.ipynb.
 
 Success Criteria
 	- Power BI live dashboard shows live data 
+	- Orders collection in cosmos db gets data from storm cluster
 	- Spark jupyter notebook successfully reads data from orders collection and inserts into orders_agg collection
 	- query the cosmos db collections to verify that data is getting inserted into the collectins
 
-	
+Pending
+	- Power BI Live Dashboard automation

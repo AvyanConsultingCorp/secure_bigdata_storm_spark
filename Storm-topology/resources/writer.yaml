@@ -1,5 +1,5 @@
 ---
-# Topology that reads from Event Hubs
+# Topology that writes to Event Hubs
 name: "eventhubwriter"
 
 components:

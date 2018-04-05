@@ -87,10 +87,10 @@
                 "storageProfile": {
                     "storageaccounts": [
                         {
-                            "name": "toyfactorystorage.blob.core.windows.net",
+                            "name": "hdinsightclusters.blob.core.windows.net",
                             "isDefault": true,
-                            "container": "toyfactoryspark-2018-02-11t04-56-42-195z",
-                            "key": "[listKeys('/subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/Microsoft.Storage/storageAccounts/toyfactorystorage', '2015-05-01-preview').key1]"
+                            "container": "toyfactoryspark",
+                            "key": "[listKeys('/subscriptions/bf64f3c6-6e64-48c5-a7cc-6c35b4f9aebf/resourceGroups/toystore/providers/Microsoft.Storage/storageAccounts/hdinsightclusters', '2015-05-01-preview').key1]"
                         }
                     ]
                 },
